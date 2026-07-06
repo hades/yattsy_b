@@ -15,10 +15,12 @@ PROMPT = """
 Process the attached audio file and generate a transcription, then summarize the transcription.
 
 Requirements:
-1. Identify distinct speakers by name, if possible, otherwise as "Speaker 1", "Speaker 2", etc.
-2. Transcript summary should start with the one-sentence meeting summary, and a list of identified participants.
-3. Provide terse meeting notes as bullet points, identify key discussion, action items, other important details.
-4. Do not include the transcript, only the summary.
+1. Identify the main spoken language. Use this main language in the next steps and in the output.
+2. Identify distinct speakers by name, if possible, otherwise as "Speaker 1", "Speaker 2", etc.
+3. Transcript summary should start with the one-sentence meeting summary, and a list of identified participants.
+4. Provide terse meeting notes as bullet points, identify key discussion, action items, other important details.
+5. Do not include the transcript, only the summary.
+6. Summary must be in the main language spoken during the meeting.
 """
 
 async def handle_message(update: telegram.Update, _context: telegram_ext.ContextTypes.DEFAULT_TYPE):
